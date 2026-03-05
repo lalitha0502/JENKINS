@@ -3,6 +3,12 @@ pipeline {
 
     stages {
 
+        stage('Clone Repository') {
+            steps {
+                git branch: 'main', url: 'https://github.com/lalitha0502/JENKINS.git'
+            }
+        }
+
         stage('Start') {
             steps {
                 echo 'Starting Jenkins Build'
@@ -18,7 +24,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                echo 'Building the sample project...'
+                echo 'Building the sample project from GitHub repository'
             }
         }
 
